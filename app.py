@@ -37,7 +37,6 @@ def transform_text(text):
 
 
 tfidf = pickle.load(open('vectorizer.pkl', 'rb'))
-model = pickle.load(open('model.pkl', 'rb'))
 mnb_model = pickle.load(open('mnb-model.pkl', 'rb'))
 st.title('Spam SMS Classifier')
 
@@ -55,10 +54,6 @@ if st.button('Predict'):
     result_mnb = mnb_model.predict(vector_sms)[0]
 
     # 4. Display result
-    # if result_voting == 1:
-    #     st.header("Result by voting: Spam")
-    # else:
-    #     st.header("Result by voting: Not Spam")
 
     if result_mnb == 1:
         st.header("Result by Multinomial Naive Bayes: Spam")
