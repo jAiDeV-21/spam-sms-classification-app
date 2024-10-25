@@ -1,5 +1,7 @@
 import streamlit as st
 import pickle
+import os
+os.system('pip install nltk')
 import nltk
 nltk.download('punkt_tab')
 from nltk.corpus import stopwords
